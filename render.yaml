@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: stroke-predictor-ussd
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn main:app
+    envVars:
+      - key: USERNAME
+        value: sandbox
+      - key: AT_API_KEY
+        value: atsk_1fc4fb4523a850a45e4e5beb92aea21a3de78f6a8125420c76b6ec3bec29211de13067f5
